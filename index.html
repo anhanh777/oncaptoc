@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ôn Luyện Toàn Diện TACN HTTT - Full 5 Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0f1d;
+      --bg-surface: #131c31;
+      --bg-card: #1b2640;
+      --border-color: #2a3b61;
+      --accent-blue: #38bdf8;
+      --accent-indigo: #818cf8;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.12);
+      --danger: #f43f5e;
+      --danger-bg: rgba(244, 63, 94, 0.12);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 10% 10%, #152238 0%, #0a0f1d 80%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 24px 16px 80px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 28px; }
+    .badge {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-blue);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #e0f2fe 10%, #38bdf8 60%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    .subtitle { color: var(--text-muted); font-size: 0.98rem; }
+    
+    /* Top Test Selector Tabs */
+    .test-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 9px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { background: var(--bg-card); color: #fff; }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #0284c7, #4f46e5);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+    }
+
+    .test-content { display: none; animation: fadeIn 0.25s ease-in-out forwards; }
+    .test-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Part Navigation Inside Test */
+    .part-nav {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+    .part-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .part-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .part-btn.active {
+      background: var(--accent-blue);
+      color: #0a0f1d;
+      font-weight: 700;
+      border-color: var(--accent-blue);
+    }
+
+    .part-section { display: none; }
+    .part-section.active { display: block; }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+      margin-bottom: 22px;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Part 1: Table 2 Columns */
+    .matching-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-color); }
+    .matching-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .matching-table th {
+      background: #101726;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .matching-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+      vertical-align: middle;
+    }
+    .matching-table tr:last-child td { border-bottom: none; }
+    .matching-table tr:hover { background: rgba(27, 38, 64, 0.5); }
+    .term-tag { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #fff; font-size: 1rem; }
+
+    select.custom-select {
+      background: #0a0f1d;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      width: 100%;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s;
+    }
+    select.custom-select:focus { border-color: var(--accent-blue); }
+    select.custom-select.is-correct { border-color: var(--success); background-color: var(--success-bg); color: #6ee7b7; }
+    select.custom-select.is-wrong { border-color: var(--danger); background-color: var(--danger-bg); color: #fda4af; }
+
+    /* Explanation Boxes */
+    .exp-box {
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: #172236;
+      border-left: 4px solid var(--accent-blue);
+      display: none;
+      font-size: 0.88rem;
+    }
+    .exp-box.show { display: block; }
+    .trap-alert {
+      margin-top: 6px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      background: var(--danger-bg);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      color: #fda4af;
+      font-size: 0.84rem;
+    }
+
+    /* Part 2: Word Fill Bank */
+    .word-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #0f1629;
+      border: 1px dashed var(--border-color);
+      margin-bottom: 20px;
+    }
+    .word-chip {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      color: var(--accent-blue);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .fill-item {
+      margin-bottom: 16px;
+      padding: 14px;
+      background: #172238;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+    .fill-sentence { font-size: 0.95rem; line-height: 1.8; margin-bottom: 8px; }
+    .fill-input {
+      background: #0a0f1d;
+      border: 1.5px solid var(--border-color);
+      border-radius: 6px;
+      color: #fff;
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 0.95rem;
+      outline: none;
+      min-width: 140px;
+    }
+    .fill-input.is-correct { border-color: var(--success); color: #6ee7b7; background: var(--success-bg); }
+    .fill-input.is-wrong { border-color: var(--danger); color: #fda4af; background: var(--danger-bg); }
+    .fill-trans { font-size: 0.88rem; color: var(--text-muted); font-style: italic; margin-bottom: 6px; }
+
+    /* Part 3: Reading */
+    .reading-passage {
+      background: #0f172a;
+      padding: 18px;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-indigo);
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .reading-passage.vietnamese {
+      border-left-color: #10b981;
+      background: #11202f;
+      display: none;
+      margin-top: 10px;
+    }
+    .qa-item {
+      margin-bottom: 18px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #162035;
+      border: 1px solid var(--border-color);
+    }
+    .qa-q { font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .qa-q-vn { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+    .qa-ans {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #0c1424;
+      border-left: 3px solid var(--success);
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      display: none;
+    }
+    .qa-ans.show { display: block; }
+
+    /* Part 4: True/False */
+    .tf-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 14px;
+      background: #172238;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 12px;
+    }
+    .tf-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .tf-text { font-size: 0.94rem; color: #f1f5f9; flex: 1; }
+    .tf-btns { display: flex; gap: 6px; }
+    .tf-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: #0a0f1d;
+      color: var(--text-muted);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tf-btn.selected-t { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .tf-btn.selected-f { background: #e11d48; color: #fff; border-color: #e11d48; }
+
+    /* Part 5: Translate */
+    .trans-item {
+      margin-bottom: 16px;
+      padding: 16px;
+      background: #162238;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+    .trans-en { font-size: 0.96rem; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .trans-vn {
+      padding: 10px 12px;
+      background: #0d1527;
+      border-left: 3px solid var(--accent-blue);
+      border-radius: 6px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      display: none;
+      margin-bottom: 6px;
+    }
+    .trans-vn.show { display: block; }
+    .trans-notes { font-size: 0.85rem; color: #f59e0b; display: none; padding-top: 4px; }
+    .trans-notes.show { display: block; }
+
+    /* Common Buttons */
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: linear-gradient(135deg, #0ea5e9, #3b82f6); color: #fff; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: #e2e8f0; border-color: var(--border-color); }
+    .btn-outline { background: transparent; color: var(--text-muted); border-color: var(--border-color); }
+    .btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .score-badge {
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 8px;
+      background: #101827;
+      border: 1px solid var(--border-color);
+      color: var(--accent-blue);
+    }
+    .extra-defs {
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 10px;
+      background: rgba(10, 15, 29, 0.8);
+      border: 1px dashed var(--border-color);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Hệ Thống Thông Tin • E-Learning</div>
+      <h1>Đề Ôn Luyện TACN HTTT (Test 1 → 5)</h1>
+      <p class="subtitle">Đầy đủ 5 phần bài tập: Bảng Nối Thuật Ngữ 2 Cột, Điền Từ, Đọc Hiểu Song Ngữ, True/False & Dịch Câu</p>
+    </header>
+
+    <!-- 5 Test Selector Buttons -->
+    <div class="test-nav">
+      <button class="tab-btn active" onclick="switchMainTest(1)">TEST 1</button>
+      <button class="tab-btn" onclick="switchMainTest(2)">TEST 2</button>
+      <button class="tab-btn" onclick="switchMainTest(3)">TEST 3</button>
+      <button class="tab-btn" onclick="switchMainTest(4)">TEST 4</button>
+      <button class="tab-btn" onclick="switchMainTest(5)">TEST 5</button>
+    </div>
+
+    <!-- Container where tests render -->
+    <div id="full-test-app"></div>
+  </div>
+
+  <script>
+    // FULL DATA OF 5 TESTS FROM DOCUMENT
+    const allTests = {
+      1: {
+        title: "Test 1: Networks, Databases & System Foundations",
+        p1: {
+          terms: [
+            { id: 1, term: "Ports", ans: "f", exp: "Port = cổng kết nối. 'sockets' = ổ cắm; cổng là nơi cắm thiết bị ngoại vi vào máy.", trap: "Tránh nhầm với các kết nối logic/giao thức." },
+            { id: 2, term: "Centralized Database", ans: "a", exp: "Dữ liệu lưu tập trung 1 chỗ, người dùng nhiều nơi cùng truy cập.", trap: "Bẫy: d là homogeneous distributed database (CSDL phân tán đồng nhất), KHÔNG phải centralized." },
+            { id: 3, term: "Java applets", ans: "e", exp: "applet = chương trình nhỏ (small programs) tạo tệp tương tác.", trap: "Bẫy: c là CSS, dùng để thêm styles." },
+            { id: 4, term: "Video conferencing", ans: "h", exp: "Hội nghị truyền hình = gọi video cho 1 hoặc nhiều người cùng lúc (2 chiều).", trap: "Bẫy: g là phát video broadcast 1 chiều lên internet." },
+            { id: 5, term: "Background", ans: "b", exp: "Màu sắc, hoa văn nền của trang web (underlying colors and patterns).", trap: "Bẫy: c là stylesheet/CSS." }
+          ],
+          defs: [
+            { key: "a", text: "a. The data is stored centrally and users from different locations can access this data." },
+            { key: "b", text: "b. the underlying colors and patterns of a web page." },
+            { key: "c", text: "c. a mechanism for adding styles to web documents." },
+            { key: "d", text: "d. databases with the same base hardware and running on the same operating systems and applications." },
+            { key: "e", text: "e. small programs that enable the creation of interactive files." },
+            { key: "f", text: "f. sockets into which an external device may be connected." },
+            { key: "g", text: "g. refers to a form of communication where videos are broadcast over the internet." },
+            { key: "h", text: "h. refers to a set of technologies that allow a person to make a video call to one or more people at the same time." }
+          ],
+          extras: ["c: CSS (Cascading Style Sheets)", "d: Homogeneous distributed database", "g: Video broadcasting / Webcasting"]
+        },
+        p2: {
+          words: ["machine", "digital", "analysis", "computers", "relational", "distributed", "exchange", "personal", "robotics", "wireless"],
+          items: [
+            { id: 1, text: "The {input} of large-size, unstructured information can be done very efficiently on several cloud virtual servers.", ans: "analysis", trans: "Việc phân tích thông tin có dung lượng lớn, phi cấu trúc có thể được thực hiện rất hiệu quả trên nhiều máy chủ ảo đám mây.", note: "Sau 'The' cần danh từ; 'analysis' = sự phân tích." },
+            { id: 2, text: "A {input} database in which various parts of a database are located in different physical locations along with databases replicated and distributed between different points in a network can be imagined.", ans: "distributed", trans: "Có thể hình dung một cơ sở dữ liệu phân tán...", note: "Các phần CSDL nằm ở nhiều vị trí vật lý khác nhau = distributed database." },
+            { id: 3, text: "Like human, a {input} retains information and becomes smarter over time.", ans: "machine", trans: "Giống như con người, một cỗ máy lưu giữ thông tin và trở nên thông minh hơn theo thời gian.", note: "Sau 'a' cần danh từ số ít (machine). 'computers' số nhiều là sai ngữ pháp." },
+            { id: 4, text: "In the modern world, telecommunications mainly means transferring information across the Internet, via modem, phone lines or {input} networks.", ans: "wireless", trans: "Trong thế giới hiện đại, viễn thông chủ yếu có nghĩa là truyền thông tin...", note: "wireless networks = mạng không dây." },
+            { id: 5, text: "In recent years, TV and radio broadcasting has been revolutionized by developments in satellite and {input} transmission.", ans: "digital", trans: "Truyền hình và phát thanh được cách mạng hóa nhờ truyền dẫn vệ tinh và kỹ thuật số.", note: "digital transmission = truyền dẫn kỹ thuật số." }
+          ]
+        },
+        p3: {
+          passage_en: "When a brand new computer comes off the factory assembly line, it can do nothing. The hardware needs software to make it work. Are we talking about applications software such as word-processing or spreadsheet software? Partly. But an applications software package does not communicate directly with the hardware. Between the applications software and the hardware is a software interface - an operating system. An operating system is a set of programs that lies between applications software and the computer hardware.\nThe most important program in the operating system, the program that manages the operating system, is the supervisor program, most of which remains in memory and is thus referred to as resident. The supervisor controls the entire operating system and loads into memory other operating system programs (called nonresident) from disk storage only as needed.\nAn operating system has three main functions: manage the computer's resources, such as the central processing unit, memory, disk drives, and printers, establish a user interface, and execute and provide services for applications software. Keep in mind, however, that much of the work of an operating system is hidden from the user. In particular, the first listed function, managing the computer's resources, is taken care of without the user being aware of the details. Furthermore, all input and output operations, although invoked by an applications program, are actually carried out by the operating system.",
+          passage_vn: "Khi một chiếc máy tính mới tinh vừa ra khỏi dây chuyền lắp ráp của nhà máy, nó không thể làm được gì cả. Phần cứng cần có phần mềm để hoạt động. Giữa phần mềm ứng dụng và phần cứng là hệ điều hành - tập hợp các chương trình nằm giữa ứng dụng và phần cứng.\nChương trình quan trọng nhất là supervisor program (thường trú - resident trong bộ nhớ), điều khiển toàn bộ HĐH và nạp các chương trình nonresident từ đĩa khi cần.\nHệ điều hành có 3 chức năng chính: (1) quản lý tài nguyên máy tính (CPU, bộ nhớ, ổ đĩa, máy in); (2) thiết lập giao diện người dùng; (3) thực thi và cung cấp dịch vụ cho phần mềm ứng dụng. Tất cả thao tác nhập xuất dù do ứng dụng gọi nhưng thực tế do HĐH thực hiện.",
+          qas: [
+            { q: "1. Why does the hardware need software?", q_vn: "Tại sao phần cứng cần phần mềm?", a: "Because a brand new computer can do nothing by itself; the hardware needs software to make it work." },
+            { q: "2. Why is the supervisor program considered as the most important operating system program?", q_vn: "Tại sao supervisor program là quan trọng nhất?", a: "Because it manages and controls the entire operating system, and it loads other operating system programs into memory from disk when they are needed." },
+            { q: "3. What is the difference between resident and non-resident programs?", q_vn: "Sự khác nhau giữa chương trình resident và non-resident?", a: "Resident programs (supervisor) stay in memory all the time, while non-resident programs are kept on disk storage and are loaded into memory only when needed." },
+            { q: "4. What are the main functions of an operating system?", q_vn: "Các chức năng chính của hệ điều hành là gì?", a: "It has three main functions: (1) manage the computer's resources (CPU, memory, disk drives, printers); (2) establish a user interface; (3) execute and provide services for applications software." },
+            { q: "5. Are computer's input and output operations carried out by the applications software?", q_vn: "Các thao tác I/O có do phần mềm ứng dụng thực hiện không?", a: "No, they aren't. They are invoked by an applications program, but they are actually carried out by the operating system." }
+          ]
+        },
+        p4: [
+          { id: 1, text: "A database query function allows you to extract information according to certain conditions or criteria.", ans: true, exp: "Query = truy vấn: trích xuất thông tin theo điều kiện hoặc tiêu chí nhất định." },
+          { id: 2, text: "Centralized Database are the paid versions of the enormous databases, designed for users who wish to access the information for assistance.", ans: false, exp: "Sai. Centralized database là CSDL tập trung, không phải 'bản trả phí'." },
+          { id: 3, text: "The analysis of large-size, unstructured information can be done very efficiently on every cloud virtual servers.", ans: false, exp: "Sai ở chữ 'every' (câu gốc trong bài là 'on several cloud virtual servers')." },
+          { id: 4, text: "Vlogging and Blogging are similar in delivering informal styles, however, with Vlogging, Vloggers can post videos.", ans: true, exp: "Đúng. Vlogging đăng video, Blogging chủ yếu là chữ." },
+          { id: 5, text: "Hackers are always looking to exploit a private network or system's vulnerabilities so they can steal confidential information and data.", ans: true, exp: "Đúng. Hacker luôn tìm cách khai thác lỗ hổng (vulnerabilities) để đánh cắp dữ liệu." }
+        ],
+        p5: [
+          { en: "1. The processor can not operate on any information if the information is not in main storage.", vn: "Bộ xử lý không thể thao tác trên bất kỳ thông tin nào nếu thông tin đó không nằm trong bộ nhớ chính.", notes: "processor = bộ xử lý; operate on = thao tác trên; main storage = bộ nhớ chính." },
+          { en: "2. The function of the control unit within the central processor is to transmit coordinating control signals and commands.", vn: "Chức năng của bộ điều khiển bên trong bộ xử lý trung tâm là truyền các tín hiệu điều khiển và các lệnh mang tính phối hợp.", notes: "control unit = bộ điều khiển (CU); coordinating = phối hợp/điều phối." },
+          { en: "3. There are a lot of benefits from an open system like the Internet, but we are also exposed to hackers who break into computer systems just for fun, as well as to steal information or propagate viruses.", vn: "Có rất nhiều lợi ích từ một hệ thống mở như Internet, nhưng chúng ta cũng phải đối mặt với những tin tặc đột nhập vào hệ thống máy tính chỉ để cho vui, cũng như để đánh cắp thông tin hoặc phát tán virus.", notes: "be exposed to = đối mặt với; break into = đột nhập; propagate viruses = phát tán virus." },
+          { en: "4. A network is a group of devices (PCs, printers, etc.) connected by communications circuits so that users can share data, programs and hardware resources.", vn: "Mạng là một nhóm thiết bị (máy tính cá nhân, máy in, v.v.) được kết nối với nhau bằng các đường truyền thông để người dùng có thể chia sẻ dữ liệu, chương trình và tài nguyên phần cứng.", notes: "connected by = rút gọn bị động; so that = để." },
+          { en: "5. LANs can be interconnected by gateways. These devices help manage communications and control traffic on large networks.", vn: "Các mạng LAN có thể được liên kết với nhau thông qua các cổng kết nối (gateway). Những thiết bị này giúp quản lý truyền thông và kiểm soát lưu lượng trên các mạng lớn.", notes: "gateway = cổng kết nối mạng; traffic = lưu lượng dữ liệu." }
+        ]
+      },
+      2: {
+        title: "Test 2: Memory, Storage & Telecommunications",
+        p1: {
+          terms: [
+            { id: 1, term: "Input devices", ans: "f", exp: "Thiết bị nhập đưa dữ liệu vào bộ nhớ của máy tính (into computer's memory).", trap: "Bẫy d là output devices (extract finish product)." },
+            { id: 2, term: "Hard drive", ans: "h", exp: "Ổ đĩa cứng = thiết bị từ tính (magnetic device) dùng để lưu trữ thông tin lâu dài.", trap: "Bản đề cũ từng in thiếu dòng h; nhớ magnetic device." },
+            { id: 3, term: "Monitor", ans: "e", exp: "Màn hình: hiển thị đầu ra (output) trên màn hình máy tính.", trap: "Không nhầm với các màn hình phụ trợ." },
+            { id: 4, term: "End User Database", ans: "a", exp: "CSDL thiết kế riêng cho người dùng cuối và cấp quản lý.", trap: "Bẫy g là functional database (cho marketing, nhân viên, CSKH)." },
+            { id: 5, term: "VOIP", ans: "c", exp: "Gọi điện thoại qua internet thay vì mạng điện thoại truyền thống.", trap: "Bẫy b là video conferencing." }
+          ],
+          defs: [
+            { key: "a", text: "a. a collaborative database that is designed specifically for the end-user as do the managers at various levels." },
+            { key: "b", text: "b. refers to a set of technologies that allow a person to make a video call to one or more people at the same time." },
+            { key: "c", text: "c. is a service to make telephone calls over the internet rather than through the traditional telephone or cell phone networks." },
+            { key: "d", text: "d. enable us to extract the finish product from the system." },
+            { key: "e", text: "e. displays the output from a computer on a screen." },
+            { key: "f", text: "f. enable data to go into the computer’s memory." },
+            { key: "g", text: "g. are needed for functional lines such as marketing, employee relationships, customer service." },
+            { key: "h", text: "h. magnetic device used to store information." }
+          ],
+          extras: ["b: Video conferencing", "d: Output devices", "g: Functional database"]
+        },
+        p2: {
+          words: ["WAN", "link", "attachment", "blogging", "LAN", "mobile", "electronic mail", "video conferencing", "Ransomware", "Phishing"],
+          items: [
+            { id: 1, text: "A {input} connects computers over a relatively short distance, allowing them to share data, files, and resources.", ans: "LAN", trans: "Mạng LAN kết nối các máy tính trong khoảng cách tương đối ngắn...", note: "Khoảng cách ngắn = LAN. Sau 'A' điền danh từ số ít bắt đầu bằng phụ âm." },
+            { id: 2, text: "By using {input}, one can send a message to another person through a mail immediately.", ans: "electronic mail", trans: "Bằng cách dùng thư điện tử, một người có thể gửi tin nhắn ngay lập tức.", note: "Gửi qua mail = electronic mail." },
+            { id: 3, text: "With the potential congestion of fixed broadband service, there is a chance that devices will fall back on {input} networks, and this will cause a significant surge of mobile data traffic.", ans: "mobile", note: "fall back on = chuyển sang dùng. Nghẽn cố định (fixed) thì dùng mobile networks.", trans: "Các thiết bị chuyển sang dùng mạng di động làm tăng vọt lưu lượng..." },
+            { id: 4, text: "Hackers try to trick email recipients into believing that a message is genuine... so that they click on a link or open a/an {input}.", ans: "attachment", trans: "Tin tặc lừa người nhận mở tệp đính kèm...", note: "open an attachment = mở tệp đính kèm. Đứng sau a/an bắt đầu bằng nguyên âm." },
+            { id: 5, text: "{input} is a type of malware that prevents you from using your computer or accessing specific files on your computer unless a ransom is paid.", ans: "Ransomware", trans: "Ransomware là loại mã độc đòi tiền chuộc...", note: "ransom = tiền chuộc -> Ransomware." }
+          ]
+        },
+        p3: {
+          passage_en: "Information stored in the RAM is lost when the computer is turned off. Because of this, data and applications are stored in either hard or floppy disks which provide a more permanent backing store.\nFloppy disks are so called because they consist of flexible plastic material which has a magnetizable surface. They are available in two sizes: 5.25-inch disks are used in old computers, 3.5-inch disks are the most popular today. The surface of a floppy disk is divided into concentric circles or 'tracks', which are then divided into 'sectors'. When you insert a blank disk into a disk drive, it must be 'initialized', or formatted, before information can be recorded onto it. This means that magnetic areas are created for each track and sector, along with a catalogue or 'directory' which will record the specific location of files.\nWhen you save a file, the operating system moves the read/write heads of the disk drive towards empty sectors, records the data and writes an entry for the directory. Later on, when you open that file, the operating system looks for its entry in the directory on the disk, moves the read/write heads to the correct sectors, and reads the file into the RAM area.",
+          passage_vn: "Thông tin trong RAM bị mất khi tắt máy. Do đó, dữ liệu lưu trên đĩa cứng hoặc đĩa mềm để lưu trữ vĩnh viễn hơn.\nĐĩa mềm làm từ vật liệu nhựa dẻo nhiễm từ, gồm 2 cỡ: 5.25 inch (máy tính cũ) và 3.5 inch (phổ biến nhất hiện nay). Bề mặt đĩa chia thành các vòng tròn đồng tâm (tracks), chia tiếp thành các cung (sectors). Khi đưa đĩa trống vào ổ, nó phải được định dạng (initialized/formatted).\nKhi lưu file, HĐH di chuyển đầu đọc/ghi tới cung trống, ghi dữ liệu và ghi mục vào thư mục (directory).",
+          qas: [
+            { q: "1. Why are data and applications not stored in RAM?", q_vn: "Tại sao dữ liệu không lưu trong RAM?", a: "Because information stored in RAM is lost when the computer is turned off, so data and applications are stored on hard or floppy disks, which provide a more permanent backing store." },
+            { q: "2. Which type of floppy disk was used in computers in the past?", q_vn: "Loại đĩa mềm nào được dùng trong quá khứ?", a: "The 5.25-inch floppy disk was used in old computers. (Bẫy: 3.5-inch là loại phổ biến hiện nay)." },
+            { q: "3. What are 'tracks'?", q_vn: "'Tracks' là gì?", a: "Tracks are the concentric circles into which the surface of a floppy disk is divided; they are then divided into sectors." },
+            { q: "4. What happens to a blank disk when you insert it into a disk drive?", q_vn: "Điều gì xảy ra khi đưa đĩa trống vào ổ đĩa?", a: "It must be initialized (formatted) before information can be recorded onto it: magnetic areas are created for each track and sector, along with a directory." },
+            { q: "5. What does the operating system do when you save a file?", q_vn: "HĐH làm gì khi bạn lưu file?", a: "It moves the read/write heads of the disk drive towards empty sectors, records the data, and writes an entry for the directory." }
+          ]
+        },
+        p4: [
+          { id: 1, text: "A Personal Digital Assistant is small enough to fit into the palm of your hand.", ans: true, exp: "Đúng. PDA là thiết bị cầm tay nhỏ vừa lòng bàn tay (palm)." },
+          { id: 2, text: "A Personal Database is an automated or built-in database for such a virtualized environment.", ans: false, exp: "Sai. Định nghĩa môi trường ảo hóa là của CLOUD database. Personal database là CSDL cá nhân." },
+          { id: 3, text: "A VPN establishes an encrypted channel that keeps a user’s identity and access credentials, as well as any data transferred, inaccessible to hackers.", ans: true, exp: "Đúng. VPN tạo đường hầm mã hóa bảo vệ thông tin trước hacker." },
+          { id: 4, text: "VOIP allows voice and multimedia data to be transferred across a data network.", ans: true, exp: "Đúng. VoIP cho phép truyền âm thanh và đa phương tiện qua mạng dữ liệu." },
+          { id: 5, text: "Thanks to electronic communication, mobile phones now let you check your email, browse the Web and connect with home or company intranets, all without wire.", ans: true, exp: "Đúng. without wire = không dây." }
+        ],
+        p5: [
+          { en: "1. CD-ROM systems offer everything, from shareware programs to dictionaries and encyclopedias, from multimedia databases to 3-D games.", vn: "Các hệ thống CD-ROM cung cấp đủ mọi thứ, từ các chương trình phần mềm dùng thử đến từ điển và bách khoa toàn thư, từ cơ sở dữ liệu đa phương tiện đến các trò chơi 3D.", notes: "shareware = phần mềm chia sẻ/dùng thử; encyclopedia = bách khoa toàn thư." },
+          { en: "2. Internet TV sets allow you to surf the Web and have e-mail while you are watching or vice versa.", vn: "Ti vi Internet cho phép bạn lướt web và dùng e-mail trong khi đang xem tivi, hoặc ngược lại.", notes: "surf the Web = lướt web; vice versa = ngược lại." },
+          { en: "3. What are 'telecommunications'? This term refers to the transmission of information over long distances using the telephone system, radio, TV satellite or computer links.", vn: "'Viễn thông' là gì? Thuật ngữ này chỉ việc truyền thông tin qua khoảng cách xa bằng hệ thống điện thoại, radio, vệ tinh truyền hình hoặc các đường liên kết máy tính.", notes: "telecommunications = viễn thông; over long distances = qua khoảng cách xa." },
+          { en: "4. Mechanical engineers use sophisticated programs for applications in computer-aid design and computer-aid manufacturing.", vn: "Các kỹ sư cơ khí sử dụng các chương trình tinh vi cho các ứng dụng trong thiết kế có sự hỗ trợ của máy tính (CAD) và sản xuất có sự hỗ trợ của máy tính (CAM).", notes: "sophisticated = tinh vi, phức tạp; computer-aided design = CAD." },
+          { en: "5. E-mail is your personal connection to the Internet which allows you to exchange messages with people all over the world. It can include text, pictures and even audio and animation.", vn: "E-mail là kết nối cá nhân của bạn với Internet, cho phép bạn trao đổi thư từ với mọi người trên khắp thế giới. Nó có thể bao gồm văn bản, hình ảnh và thậm chí cả âm thanh và hình ảnh động.", notes: "exchange messages = trao đổi tin nhắn; animation = hình ảnh động." }
+        ]
+      },
+      3: {
+        title: "Test 3: Processing, Web Tech & Smart Devices",
+        p1: {
+          terms: [
+            { id: 1, term: "Processor", ans: "c", exp: "Bộ xử lý (CPU) điều khiển mọi hoạt động trong máy tính (controls all operations).", trap: "Dễ nhầm với h: h là hệ điều hành." },
+            { id: 2, term: "Operating system", ans: "h", exp: "Tập hợp các chương trình nằm giữa chương trình ứng dụng và phần cứng.", trap: "Từ khóa: set of programs between applications and hardware." },
+            { id: 3, term: "DBMS", ans: "a", exp: "Phần mềm dùng trong CSDL để lưu trữ, tổ chức và truy xuất dữ liệu.", trap: "Database Management System." },
+            { id: 4, term: "Tags", ans: "g", exp: "Thẻ HTML đặt quanh đoạn văn bản để bảo trình duyệt cách hiển thị.", trap: "Bẫy: e là CSS (thêm styles)." },
+            { id: 5, term: "Frames", ans: "b", exp: "Vùng hình chữ nhật hiển thị các trang khác nhau trong cùng cửa sổ trình duyệt.", trap: "rectangular areas in the same browser window." }
+          ],
+          defs: [
+            { key: "a", text: "a. the software used in databases to store, organized and retrieve the data." },
+            { key: "b", text: "b. rectangular areas that allow the display of different pages in the same browser window." },
+            { key: "c", text: "c. controls all the operations in a computer." },
+            { key: "d", text: "d. small programs that enable the creation of interactive files." },
+            { key: "e", text: "e. a mechanism for adding styles to web documents." },
+            { key: "f", text: "f. is a broad area of computer science that makes machines seem like they have human intelligence." },
+            { key: "g", text: "g. are placed around pieces of text to tell the web browser how to display text or pictures." },
+            { key: "h", text: "h. is the set of programs between the applications programs and the hardware." }
+          ],
+          extras: ["d: Java applets", "e: CSS (Stylesheets)", "f: Trí tuệ nhân tạo (AI)"]
+        },
+        p2: {
+          words: ["robots", "communications", "telecommunication", "robotics", "recognition", "productive", "profitable", "artificial", "transmission", "passwords"],
+          items: [
+            { id: 1, text: "Don’t use common words or numbers as {input}, such as birthdays or names of your children.", ans: "passwords", trans: "Đừng dùng từ hoặc số quen thuộc như ngày sinh làm mật khẩu.", note: "common words as passwords." },
+            { id: 2, text: "The best database packages also include network facilities, which can make business more {input}.", ans: "productive", trans: "Các gói CSDL tốt nhất giúp doanh nghiệp làm việc năng suất hơn.", note: "make business more productive." },
+            { id: 3, text: "Thanks to books and movies, each generation has formed its own fantasy of a world ruled or at least served by {input}.", ans: "robots", trans: "Thế giới do các robot cai trị hoặc phục vụ.", note: "ruled or served by robots (danh từ số nhiều chỉ đối tượng, không chọn robotics là ngành học)." },
+            { id: 4, text: "Neural networks, also called {input} neural networks, are ways of achieving deep learning.", ans: "artificial", trans: "Mạng nơ-ron nhân tạo (ANN) là các cách để đạt được deep learning.", note: "artificial neural networks (ANN)." },
+            { id: 5, text: "While people are mostly using home WiFi, they would still use their mobile phones for voice {input}, and this is the area that MNOs need to keep a close eye on.", ans: "communications", trans: "Người dùng vẫn dùng điện thoại cho liên lạc thoại...", note: "voice communications = liên lạc/cuộc gọi thoại." }
+          ]
+        },
+        p3: {
+          passage_en: "The ability of tiny computing devices to control complex operations has transformed the way many tasks are performed, ranging from scientific research to producing consumer products. Tiny 'computers on a chip' are used in medical equipment, home appliances, cars and toys. Workers use handheld computing devices to collect data at a customer site, to generate forms, to control inventory, and to serve as desktop organizers.\nNot only is computing equipment getting smaller, it is getting more sophisticated. Computers are part of many machines and devices that once required continual human supervision and control. Today, computers in security systems result in safer environments, computers in cars improve energy efficiency, and computers in phones provide features such as call forwarding, call monitoring, and call answering.\nThese smart machines are designated to take over some of the basic tasks previously performed by people; by so doing, they make life a little easier and a little more pleasant. Smart cards store vital information such as health records, drivers’ licenses, bank balances, and so on. Smart phones, cars, and appliances with built in computers can be programmed to better meet individual needs. A smart house has a built-in monitoring system that can turn lights on and off, open and close windows, operate the oven, and more.\nWith small computing devices available for performing smart tasks like cooking dinner, programming the VCR, and controlling the flow of information in an organization, people are able to spend more time doing what they often do best – being creative. Computers can help people work more creatively.",
+          passage_vn: "Khả năng của các vi tính toán siêu nhỏ đã làm thay đổi việc thực hiện các tác vụ. 'Máy tính trên 1 con chip' được dùng trong y tế, đồ gia dụng, xe hơi, đồ chơi. Thiết bị cầm tay dùng thu thập dữ liệu, lập biểu mẫu, kiểm kê kho...\nThiết bị ngày càng tinh vi. Máy tính giúp xe tiết kiệm nhiên liệu, giúp điện thoại có tính năng chuyển tiếp và trả lời cuộc gọi... Thẻ thông minh lưu hồ sơ bệnh án, bằng lái, số dư... Nhờ máy móc làm thay các việc cơ bản, con người có nhiều thời gian hơn để sáng tạo.",
+          qas: [
+            { q: "1. Name some types of device that use 'computers on a chip'?", q_vn: "Kể tên thiết bị dùng 'computers on a chip'?", a: "Medical equipment, home appliances, cars and toys." },
+            { q: "2. What are handheld computing devices used for?", q_vn: "Thiết bị cầm tay dùng để làm gì?", a: "They are used to collect data at a customer site, to generate forms, to control inventory, and to serve as desktop organizers." },
+            { q: "3. What are the benefits of using computers in phones?", q_vn: "Lợi ích của máy tính trong điện thoại?", a: "They provide features such as call forwarding, call monitoring and call answering." },
+            { q: "4. What are smart cards used for?", q_vn: "Thẻ thông minh dùng để làm gì?", a: "They are used to store vital information such as health records, drivers’ licenses and bank balances." },
+            { q: "5. Why are people able to spend more time being creative?", q_vn: "Tại sao con người có nhiều thời gian sáng tạo hơn?", a: "Because small computing devices can perform smart tasks for them (cooking dinner, programming VCR, controlling info flow), so people have more time to be creative." }
+          ]
+        },
+        p4: [
+          { id: 1, text: "The network starts with an input layer that receives output in the form of data.", ans: false, exp: "Sai ở chữ 'output'. Lớp đầu vào (input layer) phải nhận INPUT (dữ liệu vào)." },
+          { id: 2, text: "Instant messages are sent for free over the internet and can contain multimedia items like emoji, pictures, videos and voice recordings.", ans: true, exp: "Đúng. Tin nhắn tức thời gửi miễn phí qua internet." },
+          { id: 3, text: "A database query function allows you to extract information according to certain conditions or criteria.", ans: true, exp: "Đúng. Query = trích xuất thông tin theo tiêu chí." },
+          { id: 4, text: "If you want to send instant messages on Facebook Messenger, Whatsapp or Snapchat, you will be charged a large amount of fee.", ans: false, exp: "Sai. Các dịch vụ này gửi tin nhắn MIỄN PHÍ (free), không tính phí lớn." },
+          { id: 5, text: "If you want to protect your PC, don’t open email attachments from strangers and take care when downloading files from the Web.", ans: true, exp: "Đúng. Không mở tệp đính kèm từ người lạ để bảo vệ máy." }
+        ],
+        p5: [
+          { en: "1. The CPU can also retrieve information from memory and can store the results of manipulations back into the memory unit for later reference.", vn: "CPU cũng có thể truy xuất thông tin từ bộ nhớ và có thể lưu kết quả của các thao tác xử lý trở lại bộ nhớ để tham chiếu về sau.", notes: "retrieve = truy xuất; manipulations = thao tác xử lý; for later reference = để tham chiếu sau." },
+          { en: "2. The most important function of a computer is to hold information in its memory in order to process it.", vn: "Chức năng quan trọng nhất của máy tính là lưu giữ thông tin trong bộ nhớ để xử lý nó.", notes: "hold information = lưu giữ thông tin; in order to = để." },
+          { en: "3. Computer hardware refers to the parts of the computer system that you can see and hold, such as the keyboard, monitor, disk drive and printer.", vn: "Phần cứng máy tính là các bộ phận của hệ thống máy tính mà bạn có thể nhìn thấy và cầm nắm được, như bàn phím, màn hình, ổ đĩa và máy in.", notes: "see and hold = nhìn thấy và cầm được." },
+          { en: "4. A computer virus is a very small program routine that infects a computer system and uses its resources to reproduce itself.", vn: "Virus máy tính là một đoạn chương trình rất nhỏ lây nhiễm vào hệ thống máy tính và sử dụng tài nguyên của hệ thống để tự sao chép chính nó.", notes: "program routine = đoạn chương trình; reproduce itself = tự sao chép." },
+          { en: "5. Computers are also used to present data in a more understandable form: electrical engineers use computer graphics to design circuits and people in business can present information visually to clients in graphs and diagrams.", vn: "Máy tính cũng được dùng để trình bày dữ liệu dưới dạng dễ hiểu hơn: kỹ sư điện sử dụng đồ họa máy tính để thiết kế mạch điện, và người làm kinh doanh có thể trình bày thông tin một cách trực quan cho khách hàng bằng biểu đồ và sơ đồ.", notes: "circuits = mạch điện; visually = trực quan; graphs and diagrams = biểu đồ và sơ đồ." }
+        ]
+      },
+      4: {
+        title: "Test 4: Hardware, Cloud, Topologies & Compilers",
+        p1: {
+          terms: [
+            { id: 1, term: "Peripherals", ans: "h", exp: "Thiết bị ngoại vi: các đơn vị vật lý gắn ngoài máy tính (attached to the computer).", trap: "Bẫy d là Hardware nói chung; bẫy f là Mouse (chuột)." },
+            { id: 2, term: "Hardware", ans: "d", exp: "Phần cứng: bộ phận điện tử hoặc cơ khí bạn nhìn hoặc chạm vào được (see or touch).", trap: "Khác peripherals: peripherals nhấn mạnh gắn ngoài (attached)." },
+            { id: 3, term: "ROM", ans: "a", exp: "Bộ nhớ chỉ đọc, giữ các chỉ thị cần thiết để khởi động máy tính (start up).", trap: "Khác RAM: RAM là bộ nhớ tạm, mất dữ liệu khi tắt máy." },
+            { id: 4, term: "A cloud database", ans: "g", exp: "CSDL tự động hoặc tích hợp sẵn cho môi trường ảo hóa (virtualized environment).", trap: "Bẫy c là distributed database; e là end-user database." },
+            { id: 5, term: "A network topology", ans: "b", exp: "Sơ đồ bố trí kết nối giữa các nút mạng (layout of the interconnections of nodes).", trap: "Topology = cấu trúc hình học liên kết mạng." }
+          ],
+          defs: [
+            { key: "a", text: "a. hold instructions which are needed to start up the computer." },
+            { key: "b", text: "b. is the layout of the interconnections of the nodes of a computer network which depends on the distance involved, the type of hardware used and the stability needed." },
+            { key: "c", text: "c. databases with the same base hardware and running on the same operating systems and applications." },
+            { key: "d", text: "d. is an electronic or mechanic part you can see or touch." },
+            { key: "e", text: "e. a collaborative database that is designed specifically for the end-user as do the managers at various levels." },
+            { key: "f", text: "f. controls the cursor." },
+            { key: "g", text: "g. is an automated or built-in database for such a virtualized environment." },
+            { key: "h", text: "h. are the physical units attached to the computer." }
+          ],
+          extras: ["c: Homogeneous distributed database", "e: End User Database", "f: Con chuột (Mouse)"]
+        },
+        p2: {
+          words: ["electronic", "ring", "computers", "automatic", "RAM", "networks", "CPU", "software", "Security", "social media"],
+          items: [
+            { id: 1, text: "Thanks to advances in processing speeds, {input} can actually make sense of all this information more quickly.", ans: "computers", trans: "Nhờ tiến bộ về tốc độ xử lý, máy tính có thể hiểu thông tin nhanh hơn.", note: "Chủ ngữ số nhiều computers." },
+            { id: 2, text: "{input} may be difficult to set up and may be insecure as computer hackers can send viruses or computer worms to the net computer.", ans: "Networks", trans: "Các mạng máy tính có thể khó thiết lập và không an toàn...", note: "Networks (mạng). Security không hợp ngữ nghĩa câu này." },
+            { id: 3, text: "In the near future we may have {input} pets, with video camera eyes and microphone ears, linked by radio to the family computer.", ans: "electronic", trans: "Trong tương lai gần chúng ta có thể có thú cưng điện tử...", note: "electronic pets = thú cưng điện tử." },
+            { id: 4, text: "Electronic communication can be classified into different types like messaging, voice call, e-mail, {input}, etc.", ans: "social media", trans: "Giao tiếp điện tử gồm nhắn tin, gọi thoại, email, mạng xã hội...", note: "social media = mạng xã hội." },
+            { id: 5, text: "There is no central hub that holds all the data, and communication is sent in one direction around the {input} through the use of a token.", ans: "ring", trans: "Thông tin được gửi theo 1 chiều quanh vòng qua thẻ bài (token).", note: "token ring = mạng vòng." }
+          ]
+        },
+        p3: {
+          passage_en: "Unfortunately, computers cannot understand ordinary spoken English or any other natural language. The only language they can understand directly is called machine code. This consists of the 1s and 0s (binary code) that are processed by the CPU. However, machine code as a means of communication is very difficult to write. For this reason, we use symbolic languages that are easier to understand. Then, by using a special program, these languages can be translated into machine code. For example, the so-called assembly languages use abbreviations such as ADD, SUB, MPY to represent instructions. These mnemonic codes are likes labels easily associated with the items to which they refer.\nBasic languages, where the program is similar to the machine code version, are known as low-level languages. In these languages, each instruction is equivalent to a single machine code instruction, and the program is converted into machine code by a special program called an assembler. These languages are still quite complex and restricted to particular machines.\nTo make the programs easier to write and overcome the problem of intercommunication between different types of machines, higher-level languages were designed such as BASIC, COBOL, FORTRAN, or Pascal. These are all problem-oriented rather than machine-oriented. Programs written in one of these languages (known as source programs) are converted into a lower-level language by means of a compiler (generating the object program). On compilation, each statement in a high-level language is generally translated into many machine code instructions.",
+          passage_vn: "Máy tính không hiểu ngôn ngữ tự nhiên, chỉ hiểu mã máy (machine code gồm 1 và 0). Để dễ lập trình hơn, người ta dùng ngôn ngữ ký hiệu rồi dịch sang mã máy. Hợp ngữ (Assembly) dùng mã gợi nhớ (ADD, SUB, MPY) là ngôn ngữ bậc thấp, được trình hợp dịch (assembler) chuyển sang mã máy (1 lệnh đổi thành 1 lệnh mã máy).\nNgôn ngữ bậc cao (BASIC, COBOL, FORTRAN, Pascal) hướng bài toán (problem-oriented), được trình biên dịch (compiler) dịch chương trình nguồn (source program) thành chương trình đích (object program). Mỗi câu lệnh bậc cao dịch thành nhiều lệnh mã máy.",
+          qas: [
+            { q: "1. Do computers understand human language?", q_vn: "Máy tính có hiểu ngôn ngữ con người không?", a: "No, they don't. Computers cannot understand natural languages; they can only understand machine code directly." },
+            { q: "2. Why do we use symbolic languages?", q_vn: "Tại sao dùng ngôn ngữ ký hiệu?", a: "Because machine code is very difficult to write, while symbolic languages are easier to understand." },
+            { q: "3. How can symbolic languages be translated into machine code?", q_vn: "Ngôn ngữ ký hiệu được dịch sang mã máy bằng cách nào?", a: "By using a special program: an assembler translates low-level languages, and a compiler translates high-level languages." },
+            { q: "4. What are some examples of higher-level languages mentioned in the text?", q_vn: "Ví dụ về ngôn ngữ bậc cao trong bài?", a: "BASIC, COBOL, FORTRAN and Pascal. (Lưu ý: ADD, SUB, MPY là của Assembly bậc thấp)." },
+            { q: "5. What is the function of a compiler?", q_vn: "Chức năng của trình biên dịch (compiler)?", a: "A compiler converts source programs written in a high-level language into machine code (object program); each high-level statement is translated into many machine code instructions." }
+          ]
+        },
+        p4: [
+          { id: 1, text: "A mainframe computer is more powerful than a PC.", ans: true, exp: "Đúng. Mainframe (máy tính lớn) mạnh hơn nhiều so với máy tính cá nhân (PC)." },
+          { id: 2, text: "Systems Administrators, Network Administrators, or anyone who has anything to do with cybersecurity will also be under a great deal of stress.", ans: true, exp: "Đúng. Quản trị hệ thống, mạng và bảo mật chịu áp lực công việc rất lớn." },
+          { id: 3, text: "Private networks can’t be attacked by intruders who attempt to obtain information such as Social Security numbers, bank accounts or research and business reports.", ans: false, exp: "Sai ở từ 'can’t'. Mạng riêng VẪN CÓ THỂ bị kẻ xâm nhập tấn công." },
+          { id: 4, text: "Peripherals are the physical units attached to the computer. They include storage devices and input/output devices.", ans: true, exp: "Đúng định nghĩa thiết bị ngoại vi gắn vào máy tính." },
+          { id: 5, text: "A Web Application Firewall (WAF) which updates a threat database in real-time is one of the effective ways to filter application input to protect against code injection.", ans: true, exp: "Đúng. WAF lọc dữ liệu đầu vào ứng dụng theo thời gian thực chống tấn công chèn mã." }
+        ],
+        p5: [
+          { en: "1. Today, computers in security system result in safer environments, computers in cars improve energy efficiency, and computers in phones provide features such as call forwarding, call monitoring and call answering.", vn: "Ngày nay, máy tính trong hệ thống an ninh tạo ra môi trường an toàn hơn, máy tính trong ô tô cải thiện hiệu quả sử dụng năng lượng, và máy tính trong điện thoại cung cấp các tính năng như chuyển tiếp cuộc gọi, giám sát cuộc gọi và trả lời cuộc gọi.", notes: "result in = tạo ra/dẫn đến; energy efficiency = hiệu quả năng lượng; call forwarding = chuyển tiếp cuộc gọi." },
+          { en: "2. A smart house has a built-in monitoring system that can turn lights on and off, open and close windows, operate the oven and more.", vn: "Một ngôi nhà thông minh có hệ thống giám sát tích hợp sẵn, có thể bật và tắt đèn, mở và đóng cửa sổ, vận hành lò nướng và nhiều việc khác.", notes: "built-in = tích hợp sẵn; operate the oven = vận hành lò nướng." },
+          { en: "3. Computers can work endlessly without having to stop to rest unless there is a breakdown.", vn: "Máy tính có thể làm việc không ngừng mà không cần dừng lại nghỉ, trừ khi bị hỏng hóc.", notes: "endlessly = không ngừng nghỉ; breakdown = sự cố hỏng hóc." },
+          { en: "4. Computer software can be divided into very broad categories systems software and application software.", vn: "Phần mềm máy tính có thể được chia thành các nhóm rất rộng: phần mềm hệ thống và phần mềm ứng dụng.", notes: "be divided into = chia thành; systems software = phần mềm hệ thống; application software = phần mềm ứng dụng." },
+          { en: "5. Because of the complex electronic circuitry of a computer, data can be either stored or moved about at high speeds.", vn: "Nhờ hệ thống mạch điện tử phức tạp của máy tính, dữ liệu có thể được lưu trữ hoặc di chuyển với tốc độ cao.", notes: "circuitry = hệ thống vi mạch; at high speeds = ở tốc độ cao." }
+        ]
+      },
+      5: {
+        title: "Test 5: Computer Foundations, AI & Computer Viruses",
+        p1: {
+          terms: [
+            { id: 1, term: "A computer", ans: "d", exp: "Máy điện tử nhận dữ liệu (input), xử lý dữ liệu (process), và xuất kết quả (output).", trap: "Tránh nhầm với Processor hay Software." },
+            { id: 2, term: "Software", ans: "h", exp: "Tập hợp các chỉ thị (chương trình) bảo máy tính phải làm gì.", trap: "Bẫy a là Hardware (nhìn/chạm được)." },
+            { id: 3, term: "Password", ans: "f", exp: "Một từ bí mật nhập vào máy tính trước khi sử dụng.", trap: "secret word you type into computer." },
+            { id: 4, term: "Artificial Intelligence", ans: "b", exp: "Lĩnh vực tin học làm máy móc có vẻ sở hữu trí tuệ con người.", trap: "makes machines seem like human intelligence." },
+            { id: 5, term: "Animations", ans: "c", exp: "Chuỗi ảnh độc lập ghép nối tiếp nhìn như hình chuyển động.", trap: "moving pictures sequence." }
+          ],
+          defs: [
+            { key: "a", text: "a. is an electronic or mechanic part you can see or touch." },
+            { key: "b", text: "b. is a broad area of computer science that makes machines seem like they have human intelligence." },
+            { key: "c", text: "c. are made up of a series of independent pictures put together in sequence to look like moving pictures." },
+            { key: "d", text: "d. is an electronic machine which can accept data in a certain form, process the data, and give the results of the processing in a specified format as information." },
+            { key: "e", text: "e. is a service to make telephone calls over the internet rather than through the traditional telephone or cell phone networks." },
+            { key: "f", text: "f. A secret word that you type into a computer before you use it." },
+            { key: "g", text: "g. refers to the transmission of signals over a distance for the purpose of communication." },
+            { key: "h", text: "h. is a set of instructions, called a program, which tells the computer what to do." }
+          ],
+          extras: ["a: Phần cứng (Hardware)", "e: VoIP", "g: Viễn thông (Telecommunications)"]
+        },
+        p2: {
+          words: ["virtual", "exchange", "cheap", "Internet", "minimal", "communication", "database", "transmission", "record", "overload"],
+          items: [
+            { id: 1, text: "A {input} can manage any type of data, including text, numbers, images, sound and video and hyperlinks (links to websites).", ans: "database", trans: "Cơ sở dữ liệu có thể quản lý mọi loại dữ liệu...", note: "A database = cơ sở dữ liệu." },
+            { id: 2, text: "Neural networks help solve the problem of providing higher revenue at {input} costs.", ans: "minimal", trans: "Mạng nơ-ron giúp mang lại doanh thu cao hơn với chi phí tối thiểu.", note: "minimal costs (không dùng cheap costs vì sai collocation tiếng Anh)." },
+            { id: 3, text: "Nowadays, data are actually stored in a public cloud, a hybrid cloud or a private cloud, also known as a {input} environment.", ans: "virtual", trans: "Dữ liệu lưu trên đám mây, còn gọi là môi trường ảo.", note: "virtual environment = môi trường ảo." },
+            { id: 4, text: "The {input} of information in a network is controlled by communications protocols...", ans: "transmission", trans: "Việc truyền thông tin trong mạng được kiểm soát bởi các giao thức...", note: "transmission of information (trong câu có sẵn protocols nên không điền communication)." },
+            { id: 5, text: "Netflix and Google have already announced that they would be reducing video streaming quality... to prevent network {input} and collapse.", ans: "overload", trans: "Netflix và Google giảm chất lượng video để ngăn nghẽn và quá tải mạng.", note: "network overload and collapse (quá tải mạng)." }
+          ]
+        },
+        p3: {
+          passage_en: "A biological virus is a very small, simple organism that infects living cells, known as the host, by attaching itself to them and using them to reproduce itself. This often causes harm to the host cells.\nSimilarly, a computer virus is a very small program routine that infects a computer system and uses its resources to reproduce itself. It often does this by patching the operating system to enable it to detect program files, such as COM or EXE files. It then copies itself into those files. This sometimes causes harm to the host computer system. When the user runs an infected program, it is loaded into memory carrying the virus. The virus uses a common programming technique to stay resident in memory. It can then use a reproduction routine to infect other programs. This process continues until the computer is switched off.\nThe virus may also contain a payload that remains dormant until a trigger event activates it, such as the user pressing a particular key. The payload can have a variety of forms. It might do something relatively harmless such as displaying a message on the monitor screen or it might do something more destructive such as deleting files on the hard disk.\nWhen it infects a file, the virus replaces the first instruction in the host program with a command that changes the normal execution sequence. This type of command is known as JUMP command and causes the virus instructions to be executed before the host program. The virus then returns control to the host program which then continues with its normal sequence of instructions and is executed in the normal way.",
+          passage_vn: "Virus sinh học bám vào tế bào sống (vật chủ) để tự sinh sản và gây hại. Tương tự, virus máy tính là một đoạn chương trình nhỏ lây nhiễm vào hệ thống và dùng tài nguyên máy để tự sao chép. Nó vá (patch) HĐH để phát hiện file EXE/COM rồi sao chép vào đó. Khi chạy file nhiễm, virus thường trú trong RAM và tiếp tục lây lan cho đến khi tắt máy.\nVirus có thể mang tải trọng (payload) nằm im chờ kích hoạt (phím bấm), có thể vô hại (hiện thông báo) hoặc phá hoại (xóa file ổ cứng).\nKhi lây nhiễm, nó thay lệnh đầu tiên của chương trình bằng lệnh JUMP để chạy mã virus TRƯỚC, rồi mới trả quyền điều khiển về chương trình chủ.",
+          qas: [
+            { q: "1. How does a biological virus cause harm to the host cells?", q_vn: "Virus sinh học gây hại cho vật chủ bằng cách nào?", a: "It infects living cells by attaching itself to them and using them to reproduce itself, which often causes harm." },
+            { q: "2. What is the similarity between a biological virus and a computer virus?", q_vn: "Điểm giống nhau giữa virus sinh học và máy tính?", a: "Both are very small and both infect a host and use its resources to reproduce themselves, often causing harm to the host." },
+            { q: "3. What is the effect of a virus patching the operating system?", q_vn: "Tác dụng của việc virus vá (patch) hệ điều hành?", a: "It enables the operating system to detect program files (COM, EXE), so the virus can copy itself into those files." },
+            { q: "4. What happens when the user runs an infected program?", q_vn: "Điều gì xảy ra khi chạy một file bị nhiễm virus?", a: "It is loaded into memory carrying the virus; the virus stays resident in memory and infects other programs until the computer is switched off." },
+            { q: "5. What does a virus do when it infects a file?", q_vn: "Virus làm gì khi lây nhiễm một file?", a: "It replaces the first instruction with a JUMP command so virus instructions run BEFORE the host program, then returns control to the host program." }
+          ]
+        },
+        p4: [
+          { id: 1, text: "A mainframe is used by large organizations that need to process small amount of data.", ans: false, exp: "Sai ở chữ 'small'. Mainframe dùng để xử lý LƯỢNG DỮ LIỆU LỚN (large amount of data)." },
+          { id: 2, text: "Tech professionals are not required to constantly keep themselves up-to-date on the latest trends and developments.", ans: false, exp: "Sai vì có chữ 'not required'. Chuyên gia công nghệ BẮT BUỘC phải liên tục cập nhật công nghệ mới." },
+          { id: 3, text: "A cloud database is an automated or built-in database for such a virtualized environment.", ans: true, exp: "Đúng định nghĩa CSDL đám mây trong môi trường ảo hóa." },
+          { id: 4, text: "Neural networks are used to convert handwritten characters into digital characters that a machine can recognize.", ans: true, exp: "Đúng. Mạng nơ-ron nhận dạng ký tự viết tay thành ký tự số." },
+          { id: 5, text: "Digital TV is a way of transmitting pictures by means of digital signals, in contrast to the analogue signals used by traditional TV.", ans: true, exp: "Đúng. TV kỹ thuật số dùng tín hiệu số, trái ngược với tín hiệu analogue truyền thống." }
+        ],
+        p5: [
+          { en: "1. The language used for data transfer on the Internet is known as TCP/IP (transmission control protocol/ Internet protocol). This is like the Internet operating system.", vn: "Ngôn ngữ dùng để truyền dữ liệu trên Internet được gọi là TCP/IP (giao thức điều khiển truyền dẫn/giao thức Internet). Nó giống như hệ điều hành của Internet.", notes: "data transfer = truyền dữ liệu; protocol = giao thức." },
+          { en: "2. A computer can solve a series of problems and make hundreds, even thousands, of logical decisions without becoming tired or bored.", vn: "Máy tính có thể giải quyết một loạt vấn đề và đưa ra hàng trăm, thậm chí hàng nghìn quyết định logic mà không bị mệt mỏi hay chán nản.", notes: "a series of = một loạt; without + Ving = mà không..." },
+          { en: "3. Hard disks have important advantages over floppy disks: they spin at a higher speed, so you can store and retrieve information much faster than with floppies.", vn: "Đĩa cứng có những ưu điểm quan trọng so với đĩa mềm: chúng quay với tốc độ cao hơn, nên bạn có thể lưu trữ và truy xuất thông tin nhanh hơn nhiều so với dùng đĩa mềm.", notes: "advantages over = ưu điểm so với; retrieve = truy xuất." },
+          { en: "4. The success or failure of any computer system depends on the skill with which the hardware and software components are selected and blended.", vn: "Sự thành công hay thất bại của bất kỳ hệ thống máy tính nào phụ thuộc vào kỹ năng lựa chọn và kết hợp các thành phần phần cứng và phần mềm.", notes: "depend on = phụ thuộc; blended = kết hợp/pha trộn." },
+          { en: "5. Mainframes are huge powerful machines whose peripheral equipment takes up a lot of space.", vn: "Máy tính lớn (mainframe) là những cỗ máy khổng lồ và mạnh mẽ, có thiết bị ngoại vi chiếm rất nhiều diện tích.", notes: "peripheral equipment = thiết bị ngoại vi; take up = chiếm (chỗ)." }
+        ]
+      }
+    };
+
+    function renderApp() {
+      const app = document.getElementById("full-test-app");
+      app.innerHTML = "";
+
+      for (let t = 1; t <= 5; t++) {
+        const test = allTests[t];
+        const testWrap = document.createElement("div");
+        testWrap.className = `test-content ${t === 1 ? 'active' : ''}`;
+        testWrap.id = `test-wrapper-${t}`;
+
+        // Top Navigation for 5 parts
+        let partNavHtml = `
+          <div class="part-nav">
+            <button class="part-btn active" onclick="switchPart(${t}, 1)">Phần I: Nối Thuật Ngữ (Bảng 2 cột)</button>
+            <button class="part-btn" onclick="switchPart(${t}, 2)">Phần II: Điền Từ Khuyết</button>
+            <button class="part-btn" onclick="switchPart(${t}, 3)">Phần III: Đọc Hiểu & Q&A</button>
+            <button class="part-btn" onclick="switchPart(${t}, 4)">Phần IV: True / False (Soi Bẫy)</button>
+            <button class="part-btn" onclick="switchPart(${t}, 5)">Phần V: Dịch Câu & Ngữ Pháp</button>
+          </div>
+        `;
+
+        // PART 1: 2-Column Matching
+        let p1Rows = "";
+        test.p1.terms.forEach(term => {
+          let opts = `<option value="">-- Chọn định nghĩa (a - h) --</option>`;
+          test.p1.defs.forEach(d => {
+            opts += `<option value="${d.key}">${d.text}</option>`;
+          });
+          p1Rows += `
+            <tr>
+              <td style="width: 30%;"><div class="term-tag">${term.id}. ${term.term}</div></td>
+              <td style="width: 70%;">
+                <select class="custom-select p1-select-${t}" data-ans="${term.ans}" data-id="${term.id}">
+                  ${opts}
+                </select>
+                <div class="exp-box" id="p1-exp-${t}-${term.id}">
+                  <strong>Đáp án đúng: [${term.ans.toUpperCase()}]</strong> - ${term.exp}
+                  <div class="trap-alert"><strong>Lưu ý bẫy:</strong> ${term.trap}</div>
+                </div>
+              </td>
+            </tr>
+          `;
+        });
+        let p1Extras = test.p1.extras.map(e => `<div>• ${e}</div>`).join("");
+
+        let p1Html = `
+          <div class="card part-section active" id="sec-${t}-1">
+            <div class="card-header">
+              <div class="card-title">Phần I: Match the terms (A) with definitions (B)</div>
+              <div class="score-badge" id="p1-score-${t}">Chưa nộp bài</div>
+            </div>
+            <div class="matching-table-wrap">
+              <table class="matching-table">
+                <thead><tr><th>Cột A: Thuật ngữ</th><th>Cột B: Chọn định nghĩa tương ứng</th></tr></thead>
+                <tbody>${p1Rows}</tbody>
+              </table>
+            </div>
+            <div class="action-row">
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="checkP1(${t})">Chấm Điểm Nối Từ</button>
+                <button class="btn btn-secondary" onclick="toggleExpP1(${t})">Hiện / Ẩn Giải Thích & Bẫy</button>
+                <button class="btn btn-outline" onclick="resetP1(${t})">Làm Lại</button>
+              </div>
+            </div>
+            <div class="extra-defs">
+              <strong style="color: var(--warning);">3 định nghĩa dư thừa trong đề để gài bẫy:</strong>
+              ${p1Extras}
+            </div>
+          </div>
+        `;
+
+        // PART 2: Fill in the blank
+        let wordsChips = test.p2.words.map(w => `<span class="word-chip">${w}</span>`).join("");
+        let p2Items = "";
+        test.p2.items.forEach(item => {
+          let s = item.text.replace("{input}", `<input type="text" class="fill-input p2-input-${t}" data-ans="${item.ans.toLowerCase()}" placeholder="..." />`);
+          p2Items += `
+            <div class="fill-item">
+              <div class="fill-sentence"><strong>${item.id}.</strong> ${s}</div>
+              <div class="fill-trans">→ Dịch: ${item.trans}</div>
+              <div class="exp-box" id="p2-exp-${t}-${item.id}">
+                <strong>Đáp án: ${item.ans}</strong> | Phân tích: ${item.note}
+              </div>
+            </div>
+          `;
+        });
+
+        let p2Html = `
+          <div class="card part-section" id="sec-${t}-2">
+            <div class="card-header">
+              <div class="card-title">Phần II: Choose suitable word(s) to fill in the blank</div>
+              <div class="score-badge" id="p2-score-${t}">Chưa nộp bài</div>
+            </div>
+            <div class="word-bank">${wordsChips}</div>
+            <div>${p2Items}</div>
+            <div class="action-row">
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="checkP2(${t})">Kiểm Tra Điền Từ</button>
+                <button class="btn btn-secondary" onclick="toggleExpP2(${t})">Xem Giải Thích Chi Tiết</button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // PART 3: Reading Passage & QA
+        let qaItems = "";
+        test.p3.qas.forEach((qa, idx) => {
+          qaItems += `
+            <div class="qa-item">
+              <div class="qa-q">${qa.q}</div>
+              <div class="qa-q-vn">${qa.q_vn}</div>
+              <div class="qa-ans p3-ans-${t}">${qa.a}</div>
+            </div>
+          `;
+        });
+
+        let p3Html = `
+          <div class="card part-section" id="sec-${t}-3">
+            <div class="card-header">
+              <div class="card-title">Phần III: Reading Comprehension & Q&A</div>
+              <button class="btn btn-outline" onclick="toggleVNPassage(${t})">Dịch Đoạn Văn Sang Tiếng Việt</button>
+            </div>
+            <div class="reading-passage">${test.p3.passage_en.replace(/\n/g, '<br><br>')}</div>
+            <div class="reading-passage vietnamese" id="passage-vn-${t}">${test.p3.passage_vn.replace(/\n/g, '<br><br>')}</div>
+            <div>${qaItems}</div>
+            <div class="action-row">
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="toggleAnswersP3(${t})">Hiện / Ẩn Câu Trả Lời & Dẫn Chứng</button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // PART 4: True / False
+        let tfItems = "";
+        test.p4.forEach(item => {
+          tfItems += `
+            <div class="tf-item">
+              <div class="tf-header">
+                <div class="tf-text"><strong>${item.id}.</strong> ${item.text}</div>
+                <div class="tf-btns">
+                  <button class="tf-btn tf-btn-${t}" data-id="${item.id}" data-val="true" onclick="selectTF(${t}, ${item.id}, true)">True</button>
+                  <button class="tf-btn tf-btn-${t}" data-id="${item.id}" data-val="false" onclick="selectTF(${t}, ${item.id}, false)">False</button>
+                </div>
+              </div>
+              <div class="exp-box" id="p4-exp-${t}-${item.id}">
+                <strong>Đáp án: ${item.ans ? 'TRUE (Đúng)' : 'FALSE (Sai)'}</strong> - ${item.exp}
+              </div>
+            </div>
+          `;
+        });
+
+        let p4Html = `
+          <div class="card part-section" id="sec-${t}-4">
+            <div class="card-header">
+              <div class="card-title">Phần IV: Decide True (T) or False (F)</div>
+              <div class="score-badge" id="p4-score-${t}">Chưa nộp bài</div>
+            </div>
+            <div>${tfItems}</div>
+            <div class="action-row">
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="checkP4(${t})">Chấm Điểm True/False</button>
+                <button class="btn btn-secondary" onclick="toggleExpP4(${t})">Xem Điểm Bẫy Đề Thi</button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // PART 5: Translation
+        let transItems = "";
+        test.p5.forEach((item, idx) => {
+          transItems += `
+            <div class="trans-item">
+              <div class="trans-en">${item.en}</div>
+              <div class="trans-vn p5-vn-${t}">${item.vn}</div>
+              <div class="trans-notes p5-note-${t}">📌 Lưu ý cấu trúc: ${item.notes}</div>
+            </div>
+          `;
+        });
+
+        let p5Html = `
+          <div class="card part-section" id="sec-${t}-5">
+            <div class="card-header">
+              <div class="card-title">Phần V: Translate into Vietnamese & Grammar Notes</div>
+            </div>
+            <div>${transItems}</div>
+            <div class="action-row">
+              <div class="btn-group">
+                <button class="btn btn-primary" onclick="toggleP5(${t})">Hiện / Ẩn Bản Dịch Tiếng Việt & Lưu Ý Cấu Trúc</button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        testWrap.innerHTML = partNavHtml + p1Html + p2Html + p3Html + p4Html + p5Html;
+        app.appendChild(testWrap);
+      }
+    }
+
+    // Switch between Test 1 -> 5
+    function switchMainTest(testNum) {
+      document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx + 1 === testNum);
+      });
+      document.querySelectorAll('.test-content').forEach(tc => {
+        tc.classList.remove('active');
+      });
+      const cur = document.getElementById(`test-wrapper-${testNum}`);
+      if (cur) cur.classList.add('active');
+    }
+
+    // Switch between Part 1 -> 5
+    function switchPart(testNum, partNum) {
+      const wrapper = document.getElementById(`test-wrapper-${testNum}`);
+      wrapper.querySelectorAll('.part-btn').forEach((b, idx) => {
+        b.classList.toggle('active', idx + 1 === partNum);
+      });
+      wrapper.querySelectorAll('.part-section').forEach(s => {
+        s.classList.remove('active');
+      });
+      const sec = document.getElementById(`sec-${testNum}-${partNum}`);
+      if (sec) sec.classList.add('active');
+    }
+
+    // P1 Checking & Logic
+    function checkP1(testNum) {
+      const selects = document.querySelectorAll(`.p1-select-${testNum}`);
+      let correct = 0;
+      selects.forEach(s => {
+        const user = s.value.trim().toLowerCase();
+        const ans = s.dataset.ans.toLowerCase();
+        const tid = s.dataset.id;
+        const box = document.getElementById(`p1-exp-${testNum}-${tid}`);
+        if (user === ans) {
+          correct++;
+          s.classList.remove('is-wrong');
+          s.classList.add('is-correct');
+        } else {
+          s.classList.remove('is-correct');
+          s.classList.add('is-wrong');
+          if (box) box.classList.add('show');
+        }
+      });
+      const badge = document.getElementById(`p1-score-${testNum}`);
+      badge.textContent = `Đúng ${correct}/${selects.length} câu (${Math.round(correct/selects.length*100)}%)`;
+    }
+    function toggleExpP1(testNum) {
+      const boxes = document.querySelectorAll(`#sec-${testNum}-1 .exp-box`);
+      let anyHide = Array.from(boxes).some(b => !b.classList.contains('show'));
+      boxes.forEach(b => b.classList.toggle('show', anyHide));
+    }
+    function resetP1(testNum) {
+      document.querySelectorAll(`.p1-select-${testNum}`).forEach(s => {
+        s.value = "";
+        s.classList.remove('is-correct', 'is-wrong');
+      });
+      document.querySelectorAll(`#sec-${testNum}-1 .exp-box`).forEach(b => b.classList.remove('show'));
+      document.getElementById(`p1-score-${testNum}`).textContent = "Chưa nộp bài";
+    }
+
+    // P2 Checking
+    function checkP2(testNum) {
+      const inputs = document.querySelectorAll(`.p2-input-${testNum}`);
+      let correct = 0;
+      inputs.forEach(inp => {
+        const val = inp.value.trim().toLowerCase();
+        const ans = inp.dataset.ans.toLowerCase();
+        if (val === ans) {
+          correct++;
+          inp.classList.remove('is-wrong');
+          inp.classList.add('is-correct');
+        } else {
+          inp.classList.remove('is-correct');
+          inp.classList.add('is-wrong');
+        }
+      });
+      const badge = document.getElementById(`p2-score-${testNum}`);
+      badge.textContent = `Đúng ${correct}/${inputs.length} câu`;
+      toggleExpP2(testNum, true);
+    }
+    function toggleExpP2(testNum, forceShow) {
+      const boxes = document.querySelectorAll(`#sec-${testNum}-2 .exp-box`);
+      let show = forceShow !== undefined ? forceShow : Array.from(boxes).some(b => !b.classList.contains('show'));
+      boxes.forEach(b => b.classList.toggle('show', show));
+    }
+
+    // P3 Reading
+    function toggleVNPassage(testNum) {
+      const vnP = document.getElementById(`passage-vn-${testNum}`);
+      vnP.style.display = vnP.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleAnswersP3(testNum) {
+      const ansList = document.querySelectorAll(`.p3-ans-${testNum}`);
+      let anyHide = Array.from(ansList).some(a => !a.classList.contains('show'));
+      ansList.forEach(a => a.classList.toggle('show', anyHide));
+    }
+
+    // P4 True False
+    const userTF = {};
+    function selectTF(testNum, id, val) {
+      if (!userTF[testNum]) userTF[testNum] = {};
+      userTF[testNum][id] = val;
+      const rowBtns = document.querySelectorAll(`.tf-btn-${testNum}[data-id="${id}"]`);
+      rowBtns.forEach(btn => {
+        const bVal = btn.dataset.val === 'true';
+        btn.classList.remove('selected-t', 'selected-f');
+        if (bVal === val) {
+          btn.classList.add(val ? 'selected-t' : 'selected-f');
+        }
+      });
+    }
+    function checkP4(testNum) {
+      const tests = allTests[testNum].p4;
+      let correct = 0;
+      tests.forEach(item => {
+        const userChoice = userTF[testNum] ? userTF[testNum][item.id] : undefined;
+        const box = document.getElementById(`p4-exp-${testNum}-${item.id}`);
+        if (userChoice === item.ans) {
+          correct++;
+        } else {
+          if (box) box.classList.add('show');
+        }
+      });
+      const badge = document.getElementById(`p4-score-${testNum}`);
+      badge.textContent = `Đúng ${correct}/${tests.length} câu`;
+    }
+    function toggleExpP4(testNum) {
+      const boxes = document.querySelectorAll(`#sec-${testNum}-4 .exp-box`);
+      let anyHide = Array.from(boxes).some(b => !b.classList.contains('show'));
+      boxes.forEach(b => b.classList.toggle('show', anyHide));
+    }
+
+    // P5 Translation
+    function toggleP5(testNum) {
+      const vns = document.querySelectorAll(`.p5-vn-${testNum}`);
+      const notes = document.querySelectorAll(`.p5-note-${testNum}`);
+      let anyHide = Array.from(vns).some(v => !v.classList.contains('show'));
+      vns.forEach(v => v.classList.toggle('show', anyHide));
+      notes.forEach(n => n.classList.toggle('show', anyHide));
+    }
+
+    document.addEventListener("DOMContentLoaded", renderApp);
+  </script>
+</body>
+</html>
